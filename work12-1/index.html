@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>吴建汶的万年历</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="selyear">
+        <span class="preyear" id="preyear" data-year="" onclick="setCalendar(this.dataset.year)"></span>
+        <span id="curyear"></span>
+        <span class="nextyear" id="nextyear" data-year="" onclick="setCalendar(this.dataset.year)"></span>
+     </div>
+     <div class="box" id="cal"></div>
+    </body>
+    <script>
+     var curYear = new Date().getFullYear()
+     var preYear = curYear-1
+     var nextYear = curYear+1
+     document.getElementById('curyear').setAttribute('data-year', curYear);
+     document.getElementById('preyear').setAttribute('data-year', preYear);
+     document.getElementById('nextyear').setAttribute('data-year', nextYear);
+     document.getElementById('curyear').innerText = curYear;
+     document.getElementById('preyear').innerText = "<<"+preYear;
+     document.getElementById('nextyear').innerText = nextYear+ ">>";
+ </script>
+<script src="calendar.js"></script>
+<script src="index.js"></script>
+</html>
